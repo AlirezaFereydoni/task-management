@@ -3,8 +3,8 @@ import styled from "styled-components";
 const HeaderWrapper = styled.header`
   width: 100%;
   height: max-content;
-  color: white;
-  background-color: blue;
+  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.blue};
   padding: 1rem min(3%, 36px);
   font-size: 18px;
   font-weight: bold;

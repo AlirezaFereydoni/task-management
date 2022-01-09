@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    html,body {
+  html,
+  body {
         margin: 0;
         padding: 0;
         width: 100%;
@@ -12,7 +13,9 @@ const GlobalStyle = createGlobalStyle`
         font-family: san-serif;
     }
 
-  * {outline: none;}
+  * {
+      outline: none;
+    }
 
   a {
     text-decoration:none;
@@ -31,6 +34,7 @@ const Theme = {
     black: "#000",
     dark: "#2e384d",
     light_gray: "#F6F8FC",
+    blue: "blue",
   },
 };
 

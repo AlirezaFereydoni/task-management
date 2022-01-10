@@ -1,12 +1,16 @@
 import { ReactComponent as AddIconSVG } from "../../assets/icons/add.svg";
 import { ReactComponent as EditIconSVG } from "../../assets/icons/edit.svg";
+import { ReactComponent as ChevronDownSVG } from "../../assets/icons/chevron-down.svg";
 
 const IconDictionary = {
   add: props => <AddIconSVG {...props} />,
   edit: props => <EditIconSVG {...props} />,
+  chevronDown: props => <ChevronDownSVG {...props} />,
 };
 
-const Icon = ({ name, size, className, style, fill }) => {
+const Icon = props => {
+  const { name, size, className, style, fill } = { ...props };
+
   if (!IconDictionary[name]) {
     return undefined;
   }
@@ -17,6 +21,7 @@ const Icon = ({ name, size, className, style, fill }) => {
     className: className,
     style: style,
     fill: fill,
+    ...props,
   });
 };
 

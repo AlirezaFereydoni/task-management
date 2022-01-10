@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
       outline: none;
+      box-sizing:border-box;
     }
 
   a {
@@ -25,6 +26,55 @@ const GlobalStyle = createGlobalStyle`
       text-decoration:none;
     }
   }
+
+
+  .py-1 {
+    padding:1rem 0;
+  }
+
+  .py-2 {
+    padding:2rem 0;
+  }
+
+  .px-1 {
+    padding: 0 1rem;
+  }
+
+  .px-2 {
+    padding: 0 2rem;
+  }
+
+  .pxy-1 {
+    padding:1rem;
+  }
+
+  .px-2 {
+    padding: 2rem;
+  }
+
+  .my-1 {
+    margin:1rem 0;
+  }
+
+  .my-2 {
+    margin:2rem 0;
+  }
+
+  .mx-1 {
+    margin: 0 1rem;
+  }
+
+  .mx-2 {
+    margin: 0 2rem;
+  }
+
+  .mxy-1 {
+    margin: 1rem;
+  }
+
+  .mxy-2 {
+    margin: 2rem;
+  }
     
 `;
 
@@ -33,8 +83,10 @@ const Theme = {
     white: "#fff",
     black: "#000",
     dark: "#2e384d",
-    light_gray: "#F6F8FC",
+    light_grey: "#d2d3d6",
+    dark_grey: "#7a7b7d",
     blue: "blue",
+    light_blue: "#51b8e8",
   },
 };
 

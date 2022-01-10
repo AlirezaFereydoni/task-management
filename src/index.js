@@ -6,12 +6,17 @@ import App from "./App";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, Theme } from "./global-style";
 
+// context
+import { TaskController } from "./controller";
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={Theme}>
-      <GlobalStyle />
-      <App />
-    </ThemeProvider>
+    <TaskController>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
+    </TaskController>
   </React.StrictMode>,
   document.getElementById("root")
 );

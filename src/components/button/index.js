@@ -9,6 +9,13 @@ const Base = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: ${props => props.theme.colors.dark_grey};
+    color: ${props => props.theme.colors.white};
+    cursor: not-allowed;
+  }
 `;
 
 const BlueBtn = styled(Base)`
@@ -17,14 +24,13 @@ const BlueBtn = styled(Base)`
 
   svg {
     margin-right: 0.5rem;
-    line-height
   }
 `;
 
 const WhiteBtn = styled(Base)`
   background-color: ${props => props.theme.colors.white};
-  color: ${props => props.theme.colors.cool_grey};
-  border: 1px solid ${props => props.theme.colors.cool_grey};
+  color: ${props => props.theme.colors.dark_grey};
+  border: 1px solid ${props => props.theme.colors.light_grey};
 `;
 
 export { BlueBtn, WhiteBtn };

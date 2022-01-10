@@ -9,7 +9,7 @@ const TaskReducer = (state, action) => {
     case "EDIT":
       return [...state.map(item => (item.id === action.task.id ? { ...action.task } : item))];
     case "DELETE":
-      return [...state.filter(item => item.id !== action.task.id)];
+      return [...state.filter(item => item.id !== action.id)];
     default:
       return state;
   }

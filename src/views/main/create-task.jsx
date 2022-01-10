@@ -22,7 +22,7 @@ const CreateTask = () => {
   // context api
   const { setTask } = useContext(Context);
 
-  const validation = useMemo(() => form.title.trim() !== "", [form]);
+  const validation = useMemo(() => form.title.trim() !== "", [form.title]);
 
   const createTask = () => {
     setTask({ type: "ADD", newTask: { ...form, id: uuid() } });

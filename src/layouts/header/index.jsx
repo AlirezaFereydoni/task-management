@@ -8,10 +8,9 @@ import { HeaderWrapper } from "./style";
  */
 
 const Header = ({ breadCrumb = "Task Management" }) => {
-  const manipulatedBreadCrumb = breadCrumb.replace(/\//g, " > ");
   return (
     <HeaderWrapper>
-      <h1>{manipulatedBreadCrumb}</h1>
+      <h1>{breadCrumb}</h1>
     </HeaderWrapper>
   );
 };

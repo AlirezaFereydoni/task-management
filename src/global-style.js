@@ -28,6 +28,25 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
+  &::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: ${props => props.theme.colors.black};
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 6px;
+  }
+
+
   .py-1 {
     padding:1rem 0;
   }

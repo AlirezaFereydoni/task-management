@@ -1,8 +1,5 @@
 import { Fragment } from "react";
 
-// functions
-import uuid from "react-uuid";
-
 // context
 import { Context } from "../../controller";
 
@@ -16,6 +13,9 @@ import { BlueBtn } from "../../components/button";
 import { Icon } from "../../components/icon";
 
 const CreateTask = () => {
+  // generate ID
+  let ID = 0;
+
   // creation state
   const [form, setForm] = useState({ title: "", description: "", status: "todo" });
 
@@ -25,7 +25,7 @@ const CreateTask = () => {
   const validation = useMemo(() => form.title.trim() !== "", [form.title]);
 
   const createTask = () => {
-    setTask({ type: "ADD", newTask: { ...form, id: uuid() } });
+    setTask({ type: "ADD", newTask: { ...form, id: ++ID } });
     setForm({ title: "", description: "", status: "todo" });
   };
 

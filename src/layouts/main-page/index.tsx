@@ -1,10 +1,17 @@
+import { ReactNode } from "react";
+
 // style
 import { MainLayoutWrapper } from "./style";
 
 // components
 import { Header } from "../header";
 
-const MainPageLayout = ({ path, children }) => {
+interface iMainLayout {
+  path: string;
+  children: ReactNode;
+}
+
+const MainPageLayout = ({ path, children }: iMainLayout) => {
   return (
     <MainLayoutWrapper>
       <Header breadCrumb={path} />

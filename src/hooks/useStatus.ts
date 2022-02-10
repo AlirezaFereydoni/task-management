@@ -2,7 +2,11 @@ import { useState } from "react";
 
 // business static situation
 
-const validSituation = {
+interface SituationType {
+  [key: string]: { id: number; name: string }[];
+}
+
+const validSituation: SituationType = {
   todo: [{ id: 1, name: "inProgress" }],
   inProgress: [
     { id: 2, name: "blocked" },
@@ -14,12 +18,11 @@ const validSituation = {
     { id: 6, name: "done" },
   ],
   done: [{ id: 7, name: "deployed" }],
+  deployed: [],
 };
 
-type StatusType = "todo" | "inProgress" | "blocked" | "inQa" | "done";
-
-const useStatus = (currentStatus: StatusType) => {
-  const [current, setCurrent] = useState<StatusType>(currentStatus);
+const useStatus = (currentStatus: string) => {
+  const [current, setCurrent] = useState<string>(currentStatus);
 
   return [validSituation[current], setCurrent];
 };

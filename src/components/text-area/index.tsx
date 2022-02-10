@@ -8,7 +8,7 @@ interface iTextArea {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
   value: string;
   placeholder: string;
-  height: string;
+  height?: string;
 }
 
 const TextArea = ({ onChange, value, placeholder, height = "8" }: iTextArea) => {

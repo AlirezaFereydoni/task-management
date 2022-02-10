@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TextAreaWrapper = styled.div`
+const TextAreaWrapper = styled.div<{ height: string }>`
   width: 100%;
   padding: 1rem 0.5rem 0.5rem 0.5rem;
   background-color: ${props => props.theme.colors.light_grey};

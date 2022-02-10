@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 // business static situation
+
 const validSituation = {
   todo: [{ id: 1, name: "inProgress" }],
   inProgress: [
@@ -15,8 +16,10 @@ const validSituation = {
   done: [{ id: 7, name: "deployed" }],
 };
 
-const useStatus = currentStatus => {
-  const [current, setCurrent] = useState(currentStatus);
+type StatusType = "todo" | "inProgress" | "blocked" | "inQa" | "done";
+
+const useStatus = (currentStatus: StatusType) => {
+  const [current, setCurrent] = useState<StatusType>(currentStatus);
 
   return [validSituation[current], setCurrent];
 };

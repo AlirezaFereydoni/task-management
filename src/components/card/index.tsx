@@ -7,7 +7,10 @@ import { Icon } from "../icon";
 // hooks
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ title, description, status, id }) => {
+// types
+import { iTask } from "../../types/interfaces";
+
+const Card = ({ title, description, status, id }: iTask) => {
   const navigate = useNavigate();
   return (
     <CardWrapper>

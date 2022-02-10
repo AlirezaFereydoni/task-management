@@ -10,8 +10,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<MainPage />} />
-        <Route exact path="/edit/:id" element={<EditPage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/edit/:id" element={<EditPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

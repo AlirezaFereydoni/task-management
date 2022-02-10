@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
   &::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background: ${props => props.theme.colors.black};
+    background: "#000";
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     -webkit-border-radius: 6px;

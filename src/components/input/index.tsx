@@ -1,7 +1,14 @@
 // style
 import { InputWrapper } from "./style";
+import { ChangeEventHandler } from "react";
 
-const Input = ({ onChange, value, placeholder }) => {
+interface iInput {
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  value: string;
+  placeholder: string;
+}
+
+const Input = ({ onChange, value, placeholder }: iInput) => {
   return (
     <InputWrapper>
       {value && <span>{placeholder}</span>}

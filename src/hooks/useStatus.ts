@@ -1,11 +1,13 @@
 import { useState } from "react";
 
-// business static situation
+// type
+import { Item } from "../types/types";
 
 interface SituationType {
-  [key: string]: { id: number; name: string }[];
+  [key: string]: Item[];
 }
 
+// business static logic
 const validSituation: SituationType = {
   todo: [{ id: 1, name: "inProgress" }],
   inProgress: [
@@ -22,9 +24,9 @@ const validSituation: SituationType = {
 };
 
 const useStatus = (currentStatus: string) => {
-  const [current, setCurrent] = useState<string>(currentStatus);
+  const [current, setCurrent] = useState(currentStatus);
 
-  return [validSituation[current], setCurrent];
+  return [validSituation[current], setCurrent] as const;
 };
 
 export { useStatus };

@@ -7,8 +7,20 @@ import { useState, useEffect, useRef } from "react";
 // components
 import { Icon } from "../icon";
 
-const Select = ({ dataList = [], placeholder, onChange, initialValue }) => {
-  const selectRef = useRef(null);
+interface Item {
+  id: number;
+  name: string;
+}
+
+interface iSelect {
+  dataList: Item[];
+  placeholder: string;
+  onChange: (selectedItem: Item) => void;
+  initialValue: string;
+}
+
+const Select = ({ dataList = [], placeholder, onChange, initialValue }: iSelect) => {
+  const selectRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
   const [value, setValue] = useState(initialValue);
 
@@ -20,9 +32,9 @@ const Select = ({ dataList = [], placeholder, onChange, initialValue }) => {
 
   // check if outside of select box clicked and close list items
   useEffect(() => {
-    const clickOutSide = e => {
+    const clickOutSide = (e: MouseEvent): void => {
       if (isOpen) {
-        if (selectRef && !selectRef?.current.contains(e.target)) {
+        if (selectRef && selectRef.current && !selectRef.current.contains(e.target)) {
           setOpen(false);
         }
       }
@@ -34,7 +46,7 @@ const Select = ({ dataList = [], placeholder, onChange, initialValue }) => {
   }, [selectRef, isOpen]);
 
   // Handle Select item from list
-  const onSelect = selectedItem => {
+  const onSelect = (selectedItem: Item) => {
     setValue(selectedItem.name);
     if (onChange) onChange(selectedItem);
   };

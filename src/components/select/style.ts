@@ -3,7 +3,7 @@ import styled from "styled-components";
 // input style
 import { InputWrapper } from "../input/style";
 
-const SelectBoxWrapper = styled(InputWrapper)`
+const SelectBoxWrapper = styled(InputWrapper)<{ isOpen: boolean }>`
   position: relative;
   cursor: pointer;
 

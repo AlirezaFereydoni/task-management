@@ -20,12 +20,15 @@ import { BlueBtn, WhiteBtn } from "../../components/button";
 import { Icon } from "../../components/icon";
 import { Select } from "../../components/select";
 
+// types
+import { iTask } from "../../types/interfaces";
+
 const EditPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { tasks, setTask } = useContext(Context);
 
-  const [form, setForm] = useState({ title: "", description: "", status: "todo", id: "" });
+  const [form, setForm] = useState<iTask>({ title: "", description: "", status: "todo", id: 0 });
 
   const [isValid, SetIsValid] = useState(true);
 
@@ -33,7 +36,7 @@ const EditPage = () => {
   const [statusOptions, setCurrentStatus] = useStatus("todo");
 
   useEffect(() => {
-    const item = tasks.find(task => task.id === id);
+    const item = tasks.find(task => task.id === Number(id));
 
     if (item) {
       setForm(item);
@@ -87,6 +90,7 @@ const EditPage = () => {
         <div className="section-button">
           <BlueBtn onClick={editTask}>
             <Icon name="edit" size="0.8" fill="white" />
+
             Edit
           </BlueBtn>
           <WhiteBtn onClick={() => navigate("/")}>Cancel</WhiteBtn>

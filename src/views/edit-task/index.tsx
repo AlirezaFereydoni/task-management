@@ -90,7 +90,6 @@ const EditPage = () => {
         <div className="section-button">
           <BlueBtn onClick={editTask}>
             <Icon name="edit" size="0.8" fill="white" />
-
             Edit
           </BlueBtn>
           <WhiteBtn onClick={() => navigate("/")}>Cancel</WhiteBtn>

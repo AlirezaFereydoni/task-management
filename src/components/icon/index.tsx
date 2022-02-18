@@ -8,6 +8,7 @@ interface IconProps {
   className?: string;
   style?: React.CSSProperties;
   fill?: string;
+  onClick?: () => void;
 }
 
 interface MainIcon extends IconProps {

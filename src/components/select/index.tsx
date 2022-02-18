@@ -7,10 +7,8 @@ import { useState, useEffect, useRef } from "react";
 // components
 import { Icon } from "../icon";
 
-interface Item {
-  id: number;
-  name: string;
-}
+// type
+import { Item } from "../../types/types";
 
 interface iSelect {
   dataList: Item[];
@@ -32,9 +30,9 @@ const Select = ({ dataList = [], placeholder, onChange, initialValue }: iSelect)
 
   // check if outside of select box clicked and close list items
   useEffect(() => {
-    const clickOutSide = (e: MouseEvent): void => {
+    const clickOutSide = (e: MouseEvent) => {
       if (isOpen) {
-        if (selectRef && selectRef.current && !selectRef.current.contains(e.target)) {
+        if (selectRef && !selectRef?.current?.contains(e.target as Node)) {
           setOpen(false);
         }
       }
